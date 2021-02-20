@@ -1,4 +1,4 @@
-# Google Books Search
+# react-google-books
 
 ### Overview
 
