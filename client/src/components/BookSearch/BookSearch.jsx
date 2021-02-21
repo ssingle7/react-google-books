@@ -15,7 +15,7 @@ const BookSearch = () => {
             class="form-control mb-3 "
             id="searchBook"
           />
-          <button type="submit" class="btn btn-primary float-right">
+          <button type="submit" class="btn btn-danger float-right">
             Search
           </button>
         </div>
