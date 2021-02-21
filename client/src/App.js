@@ -1,4 +1,6 @@
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer"; 
+
 import Hero from "./components/Hero/Hero";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 import Search from "./Pages/Search";
@@ -13,6 +15,7 @@ function App() {
       <Route exact path = "/" component = {Search} />
       <Route exact path = "/saved" component = {Saved} />
       </Router>
+      <Footer />
     </div>
   );
 }
