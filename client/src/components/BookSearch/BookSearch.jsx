@@ -2,7 +2,7 @@ import React from "react";
 
 const BookSearch = () => {
   return (
-    <>
+    <div className="mb-5">
       <form>
         <div class="mb-3">
           <label for="searchBook" class="form-label">
@@ -20,7 +20,7 @@ const BookSearch = () => {
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

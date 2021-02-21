@@ -2,7 +2,8 @@ import React from "react";
 
 const BookResult = () => {
   return (
-    <div>
+    <div className="mt-5">
+        <br /><hr />
       <h1>Results</h1>
 
       <div className="card">
@@ -11,7 +12,7 @@ const BookResult = () => {
             <a href="#" className="btn btn-primary mr-3">
               VIEW
             </a>
-            <a href="#" className="btn btn-primary">
+            <a href="#" className="btn btn-success">
               SAVE
             </a>
           </div>
