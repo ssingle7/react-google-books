@@ -7,8 +7,10 @@ const Search = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <h1>This is my search page</h1>
+        <div className="bg-light p-5">
+          <h1>Book Search</h1>
           <BookSearch />
+        </div>
           <BookResult />
         </div>
       </div>

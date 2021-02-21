@@ -4,8 +4,6 @@ import "./BookResult.css"
 const BookResult = () => {
   return (
     <div className="mt-5">
-      <br />
-      <hr />
       <h1>Results</h1>
 
       <div className="card">
