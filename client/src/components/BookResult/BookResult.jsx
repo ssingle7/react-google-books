@@ -9,10 +9,10 @@ const BookResult = () => {
       <div className="card">
         <div className="card-body">
           <div id="buttons" className="float-right">
-            <a href="#" className="btn btn-primary mr-3">
+            <a href="#" className="btn btn-outline-primary mr-3">
               VIEW
             </a>
-            <a href="#" className="btn btn-success">
+            <a href="#" className="btn btn-outline-success">
               SAVE
             </a>
           </div>
