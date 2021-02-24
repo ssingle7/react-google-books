@@ -3,6 +3,7 @@ import BookSearch from "../components/BookSearch/BookSearch";
 import BookResult from "../components/BookResult/BookResult";
 import axios from "axios";
 
+
 function BookInfo(book) {
   return (
     // <BookSearch />
@@ -21,35 +22,23 @@ const Search = () => {
       .then((response) => {
         console.log(response.data.items);
         setBooks(response.data.items);
-        //  const arrayOfBooks = response.data.items
+      });
+  }
 
-        //  console.log(arrayOfBooks);
-
-        //  arrayOfBooks.map(BookInfo)
-
-        //  const bookTitle = (response.data.items.volumeInfo.title)
-        //  console.log(bookTitle)
-
-        //  const bookAuthor = (response.data.volumeInfo.authors)
-        //  console.log(bookAuthor)
-
-        //  const bookDescription = (response.data.volumeInfo.description)
-        //  console.log(bookDescription)
-
-        //  const bookImage = (response.data.volumeInfo.imageLinks.thumbnail)
-        //  console.log(bookImage)
-
-        //  const bookLink = (response.data.saleInfo.buyLink)
-        //  console.log(bookLink)
-        //  console.log(response.data.items[0].volumeInfo.title);
-        //  console.log(response.data.items[0].volumeInfo.authors[0]);
-        //  console.log(response.data.items[0].volumeInfo.imageLinks.thumbnail);
+  function saveBook(book) {
+    axios
+      .post("/api/books", book)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
 
   useEffect(() => {
     SearchBooks();
-  }, [])
+  }, []);
 
   return (
     <div className="container">
@@ -60,9 +49,7 @@ const Search = () => {
             <BookSearch />
           </div>
           {books.map((book) => (
-            <BookResult {...book} 
-              key={book.id}
-            />
+            <BookResult book={book} key={book.id} saveBook={saveBook} />
           ))}
         </div>
       </div>
