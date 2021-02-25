@@ -1,5 +1,10 @@
 # Google Books 📕 React Search App
 
+contributors:  
+[Lisa Copeland](https://github.com/stopdaydreaming)  
+[Derrick Hardison](https://github.com/derrickhardison)  
+[Selena Singleton](https://github.com/ssingle7) 
+
 ## Description
 
 Google Books Search app is a React-based app for searching and saving from the Google Books API.
