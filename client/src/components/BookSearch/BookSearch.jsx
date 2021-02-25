@@ -1,37 +1,27 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"
+import API from "../../utils/API";
 
+const BookSearch = () => {
+  const [bookSearch, setBookSearch] = useState("");
+  const [formObject, setFormObject] = useState({
+    title: "",
+    authors: "",
+    description: "",
+    infoLink: "",
+  })
 
-// function SearchBooks(e) {
-//   e.preventDefault()
- 
-//   axios
-//     .get(
-//       `https://www.googleapis.com/books/v1/volumes?q=intitle:&key=AIzaSyAfrpQXZXcliTIXdDGXtxQAW6Pi5iGb42w`
-//     )
-//     .then((response) => {
-//        console.log(response.data.items);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormObject({...formObject, [name]: value})
+  }
 
-//     });
-// }
-
-
- const BookSearch = () => {
-
-   const [bookSearch, setBookSearch] = useState("");
-
-   const handleFormSubmit = event => {
-     event.preventDefault();
-  console.log("I was submitted")
-     const { value} = event.target;
-     console.log(value)
-     //setBookSearch(value)
-   }
-
-
-//   useEffect(() => {
-    
-//   }, []);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    API.getBooks(bookSearch)
+    .then(res => setBookSearch(res.data))
+    .catch(err => console.log(err));
+    // console.log("search books");
+  };
 
   return (
     <div className="mb-5">
@@ -41,8 +31,9 @@ import axios from "axios"
             Search for Book
           </label>
           <input
-            // onChange={handleInputChange}
-            // value={bookSearch}
+            name="title"
+            onChange={handleInputChange}
+            value={formObject.title}
             type="text"
             className="form-control mb-3 "
             id="searchBook"
