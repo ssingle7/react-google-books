@@ -17,7 +17,7 @@ const Search = () => {
   function SearchBooks() {
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=intitle:potter&key=AIzaSyAfrpQXZXcliTIXdDGXtxQAW6Pi5iGb42w`
+        `https://www.googleapis.com/books/v1/volumes?q=intitle:romeo&key=AIzaSyAfrpQXZXcliTIXdDGXtxQAW6Pi5iGb42w`
       )
       .then((response) => {
         console.log(response.data.items);
@@ -48,6 +48,7 @@ const Search = () => {
             <h1>Book Search</h1>
             <BookSearch />
           </div>
+          <h1 className="mt-3">Results</h1>
           {books.map((book) => (
             <BookResult book={book} key={book.id} saveBook={saveBook} />
           ))}
