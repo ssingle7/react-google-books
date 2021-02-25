@@ -1,7 +1,7 @@
 import React from "react";
 import "./BookResult.css"
 
-const BookResult = () => {
+const BookResult = (props) => {
   return (
     <div className="mt-5">
       <h1>Results</h1>
@@ -9,16 +9,16 @@ const BookResult = () => {
       <div className="card">
         <div className="card-body">
           <div id="buttons" className="float-right">
-            <a href="#" className="btn btn-outline-primary mr-3">
+            <a href={props.volumeInfo.infoLink} className="btn btn-outline-primary mr-3" target="_blank" rel="noopener noreferrer">
               VIEW
             </a>
             <a href="#" className="btn btn-outline-success">
               SAVE
             </a>
           </div>
-          <h5 className="card-title">Title</h5>
+          <h5 className="card-title">{props.volumeInfo.title}</h5>
 
-          <p className="card-text">Author</p>
+          <p className="card-text">{props.volumeInfo.authors}</p>
         </div>
         <div className="container">
           <div className="row">
@@ -28,35 +28,14 @@ const BookResult = () => {
                   <div className="col-md-5">
                     <img
                         className="full-img"
-                      src="https://picsum.photos/200/200?grayscale"
+                      src={props.volumeInfo.imageLinks}
                       alt="..."
                     />
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
                       <p className="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Architecto quas pariatur, repudiandae, possimus animi
-                        natus autem eius libero voluptate velit placeat illum
-                        eum atque reprehenderit sit mollitia, quidem
-                        consequuntur! Animi consequatur a laborum eligendi
-                        repellendus ut suscipit iure eaque. Iste molestiae
-                        facere tenetur ducimus incidunt vero iusto rerum dolore!
-                        Nulla ea magnam molestiae, aliquid obcaecati unde, quos
-                        odio voluptate ratione sunt nobis consectetur, in esse
-                        et enim autem sint error eius corporis excepturi quaerat
-                        deserunt! Veritatis dolorum quod vitae! Quod consectetur
-                        quo numquam iste ducimus? Reprehenderit iste pariatur
-                        temporibus dolor est voluptate, sed repellendus!
-                        Blanditiis expedita culpa cumque magni impedit molestias
-                        explicabo exercitationem? Consequatur unde perferendis,
-                        accusantium distinctio recusandae ratione numquam aut
-                        facere iusto officiis pariatur at corporis soluta
-                        voluptatum, sit reiciendis? Inventore dolor voluptate
-                        accusantium, nostrum tenetur a, quasi, dolore itaque
-                        facilis eveniet quia illo beatae recusandae
-                        reprehenderit? Sunt eligendi eius ipsa unde blanditiis
-                        laboriosam vitae eaque perferendis fugit.
+                      {props.volumeInfo.description}
                       </p>
                     </div>
                   </div>
