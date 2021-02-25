@@ -1,6 +1,6 @@
 # Google Books 📕 React Search App
 
-contributors:  
+Contributors:  
 [Lisa Copeland](https://github.com/stopdaydreaming)  
 [Derrick Hardison](https://github.com/derrickhardison)  
 [Selena Singleton](https://github.com/ssingle7) 
