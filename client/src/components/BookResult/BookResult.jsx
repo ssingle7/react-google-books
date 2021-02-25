@@ -9,7 +9,7 @@ const BookResult = ({ book, saveBook }) => {
 
   return (
     <div className="mt-5">
-      <h1>Results</h1>
+      
 
       <div className="card">
         <div className="card-body">
