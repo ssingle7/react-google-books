@@ -1,5 +1,7 @@
 # Google Books 📕 React Search App
 
+## Credits
+
 Contributors:  
 [Lisa Copeland](https://github.com/stopdaydreaming)  
 [Derrick Hardison](https://github.com/derrickhardison)  
@@ -38,13 +40,6 @@ Click this link to [VIEW APP]()
 
 This code should be used for the purpose of creating/editing code for a Google Books Search app.
 ![Google Books Search App](./screenshots/screenshot.png)
-
-## Credits
-
-3 contributors:  
-[Lisa Copeland](https://github.com/stopdaydreaming)  
-[Derrick Hardison](https://github.com/derrickhardison)  
-[Selena Singleton](https://github.com/ssingle7)  
 
 ## License
 
