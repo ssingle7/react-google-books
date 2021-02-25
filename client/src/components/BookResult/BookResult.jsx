@@ -1,8 +1,12 @@
 import React from "react";
 import "./BookResult.css";
 
-const BookResult = ({book, saveBook}) => {
-  console.log(book)
+const BookResult = ({ book, saveBook }) => {
+  console.log(book);
+
+  const loremDesc =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+
   return (
     <div className="mt-5">
       <h1>Results</h1>
@@ -37,14 +41,17 @@ const BookResult = ({book, saveBook}) => {
                   <div className="col-md-5">
                     <img
                       className="full-img"
-                      src={book.volumeInfo.imageLinks}
+                      src={
+                        book?.volumeInfo?.imageLinks?.thumbnail ||
+                        "https://placehold.it/200x200"
+                      }
                       alt="..."
                     />
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
                       <p className="card-text">
-                        {book.volumeInfo.description}
+                        {book.volumeInfo.description || loremDesc}
                       </p>
                     </div>
                   </div>
