@@ -1,7 +1,8 @@
 import React from "react";
-import "./BookResult.css"
+import "./BookResult.css";
 
-const BookResult = (props) => {
+const BookResult = ({book, saveBook}) => {
+  console.log(book)
   return (
     <div className="mt-5">
       <h1>Results</h1>
@@ -9,16 +10,24 @@ const BookResult = (props) => {
       <div className="card">
         <div className="card-body">
           <div id="buttons" className="float-right">
-            <a href={props.volumeInfo.infoLink} className="btn btn-outline-primary mr-3" target="_blank" rel="noopener noreferrer">
+            <a
+              href={book.volumeInfo.infoLink}
+              className="btn btn-outline-primary mr-3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               VIEW
             </a>
-            <a href="#" className="btn btn-outline-success">
+            <button
+              className="btn btn-outline-success"
+              onClick={() => saveBook(book.volumeInfo)}
+            >
               SAVE
-            </a>
+            </button>
           </div>
-          <h5 className="card-title">{props.volumeInfo.title}</h5>
+          <h5 className="card-title">{book.volumeInfo.title}</h5>
 
-          <p className="card-text">{props.volumeInfo.authors}</p>
+          <p className="card-text">{book.volumeInfo.authors}</p>
         </div>
         <div className="container">
           <div className="row">
@@ -27,15 +36,15 @@ const BookResult = (props) => {
                 <div className="row no-gutters">
                   <div className="col-md-5">
                     <img
-                        className="full-img"
-                      src={props.volumeInfo.imageLinks}
+                      className="full-img"
+                      src={book.volumeInfo.imageLinks}
                       alt="..."
                     />
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
                       <p className="card-text">
-                      {props.volumeInfo.description}
+                        {book.volumeInfo.description}
                       </p>
                     </div>
                   </div>
